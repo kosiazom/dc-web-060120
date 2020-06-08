@@ -20,18 +20,26 @@ nums = (1..20).to_a #creates an array of all numbers from 1-20
 # 1.  Create an array of numbers where each new number is three times as big as
 # its original number (e.g., [3, 6, 9])
 
+nums.map {|number| number * 3 }
 
 # 2.  Find the first number that is divisible by 7
-
+nums.detect {|number| number % 7 == 0}
 
 # 3.  Find all numbers that are divisible by 7
 
+nums.select {|number| number % 7 == 0}
+
 
 # 4.  Find the first number that is divisible by 7 AND greater than 10
-
+nums.find {|number| number % 7 == 0 && number > 10 }
 
 # Bonus:
 
 
 # 5.  Create an array of the squares (the number times itself) of all numbers
 # that are divisible by 7
+squares_array = nums.select do |number|
+    if number % 7 == 0 
+        number ** 2
+    end
+end
